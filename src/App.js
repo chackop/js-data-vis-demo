@@ -1,22 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import CustomD3Charts from "./components/customD3";
+import LineRechart from "./components/Rechart/LineRechart";
+import ToastUI from "./components/toastUI";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div>
+          <h2>Line Graph Using Rechart</h2>
+          <LineRechart />
+        </div>
+        <div>
+          <h2>Custom D3 Charts</h2>
+          <CustomD3Charts />
+        </div>
+        <div>
+          <h2>Toast UI</h2>
+          <ToastUI />
+        </div>
       </header>
     </div>
   );
