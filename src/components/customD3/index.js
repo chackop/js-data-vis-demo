@@ -1,5 +1,29 @@
 import React, { useState } from "react";
+import ForceTreeChart from "./ForceTreeChart";
 import ZoomableLineChartD3 from "./ZoomableLineChartD3";
+
+const nodeData = {
+  name: "😐",
+  children: [
+    {
+      name: "🙂",
+      children: [
+        {
+          name: "😀",
+        },
+        {
+          name: "😁",
+        },
+        {
+          name: "🤣",
+        },
+      ],
+    },
+    {
+      name: "😔",
+    },
+  ],
+};
 
 const CustomD3Charts = () => {
   const [data, setData] = useState(
@@ -8,7 +32,7 @@ const CustomD3Charts = () => {
 
   return (
     <React.Fragment>
-      <h3>Zoomable Line Chart with D3 </h3>
+      <h3>Zoomable Line Chart with D3</h3>
 
       <ZoomableLineChartD3 data={data} />
 
@@ -17,6 +41,9 @@ const CustomD3Charts = () => {
       >
         Add data
       </button>
+
+      <h3>Force Tree Chart D3</h3>
+      {/* <ForceTreeChart data={nodeData} /> */}
     </React.Fragment>
   );
 };
