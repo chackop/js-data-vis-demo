@@ -2,12 +2,20 @@
 
 ## Network Graph using React Viz
 
-![Alt text](/screenshot3.png?raw=true "Network graph")
+### Overall Structure
 
-## Recharts
+![Alt text](/screen3.png?raw=true "Network graph")
 
-## Custom
+### Filtering and labeling
 
-## Toast UI
+![Alt text](/screen4.png?raw=true "Filter")
+
+## Other D3 based charts
+
+### Recharts
+
+### Custom D3
+
+### Toast UI
 
 ![Alt text](/screenshot1.png?raw=true "Image Title")

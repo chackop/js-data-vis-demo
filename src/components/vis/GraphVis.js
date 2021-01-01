@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Graph from "react-graph-vis";
 
 const initgraph = {
@@ -72,6 +72,7 @@ const GraphVis = () => {
   const [selectnode, setselectnode] = useState("Node Selection");
   const [edgeactive, setedgeactive] = useState(false);
   const [graphdata, setgraphdata] = useState(initgraph);
+
   let selectedNodeTitle = `Selected node ${selectnode}`;
 
   const events = {
@@ -82,13 +83,18 @@ const GraphVis = () => {
   };
 
   const handleActive = (evt) => {
-    let newEdges = initgraph.edges.filter((item) => item.relation === "active");
-    console.log("newGraphData", newEdges);
-    console.log("initgraph", initgraph);
-    let newGraphData = { ...initgraph, edges: newEdges };
-    setgraphdata(newGraphData);
     setedgeactive(!edgeactive);
   };
+
+  useEffect(() => {
+    if (edgeactive) {
+      let newEdges = initgraph.edges.filter(
+        (item) => item.relation === "active"
+      );
+      let newGraphData = { ...initgraph, edges: newEdges };
+      setgraphdata(newGraphData);
+    }
+  }, [edgeactive]);
 
   return (
     <>
